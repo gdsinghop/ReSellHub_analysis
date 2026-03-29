@@ -7,15 +7,18 @@
 <meta name="description" content="Buy refurbished smartphones at ResellHub. Affordable iPhones, Samsung & OnePlus devices with warranty in India.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Google Analytics -->
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YC8MGL21LM"></script>
+<!-- Google Tag Manager -->
 
 <script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-YC8MGL21LM');
+(function(w,d,s,l,i){
+w[l]=w[l]||[];
+w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
+j.async=true;
+j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MC8WW47H');
 </script>
 
 <!-- Microsoft Clarity -->
@@ -76,6 +79,13 @@ margin:5px 0 15px 0;
 
 <body>
 
+<!-- Google Tag Manager (noscript) -->
+
+<noscript>
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC8WW47H"
+height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+
 <header>
 <h1>ResellHub</h1>
 <p>Refurbished Smartphones at Best Prices</p>
@@ -84,21 +94,21 @@ margin:5px 0 15px 0;
 <section class="products">
 
 <div class="product">
-<h3 onclick="viewItem('SKU_201','Refurbished iPhone 13',45000)">iPhone 13 (Refurbished)</h3>
+<h3 onclick="trackEvent('view_item','iPhone 13',45000)">iPhone 13 (Refurbished)</h3>
 <p>₹45,000</p>
-<button onclick="addToCart('SKU_201','Refurbished iPhone 13',45000)">Add to Cart</button>
+<button onclick="trackEvent('add_to_cart','iPhone 13',45000)">Add to Cart</button>
 </div>
 
 <div class="product">
-<h3 onclick="viewItem('SKU_202','Samsung Galaxy S21 Used',32000)">Samsung Galaxy S21</h3>
+<h3 onclick="trackEvent('view_item','Samsung S21',32000)">Samsung Galaxy S21</h3>
 <p>₹32,000</p>
-<button onclick="addToCart('SKU_202','Samsung Galaxy S21 Used',32000)">Add to Cart</button>
+<button onclick="trackEvent('add_to_cart','Samsung S21',32000)">Add to Cart</button>
 </div>
 
 <div class="product">
-<h3 onclick="viewItem('SKU_203','OnePlus 9 Refurbished',28000)">OnePlus 9</h3>
+<h3 onclick="trackEvent('view_item','OnePlus 9',28000)">OnePlus 9</h3>
 <p>₹28,000</p>
-<button onclick="addToCart('SKU_203','OnePlus 9 Refurbished',28000)">Add to Cart</button>
+<button onclick="trackEvent('add_to_cart','OnePlus 9',28000)">Add to Cart</button>
 </div>
 
 </section>
@@ -109,11 +119,11 @@ margin:5px 0 15px 0;
 
 <form onsubmit="processPayment(event)">
 
-<label>Card Number</label> <input type="text" id="cardNumber" placeholder="Enter Card Number" required>
+<label>Card Number</label> <input type="text" id="cardNumber" required>
 
 <label>Name</label> <input type="text" required>
 
-<label>Expiry</label> <input type="text" placeholder="MM/YY" required>
+<label>Expiry</label> <input type="text" required>
 
 <label>CVV</label> <input type="password" required>
 
@@ -123,34 +133,22 @@ margin:5px 0 15px 0;
 
 <p id="paymentResult"></p>
 
-<p style="font-size:12px">
-Test Cards:<br>
-1111 1111 1111 1111 → Success<br>
-2222 2222 2222 2222 → Failed
-</p>
-
 </div>
 
 <script>
 
-function viewItem(id, name, price) {
-gtag('event','view_item',{
-currency:'INR',
-value:price,
-items:[{item_id:id,item_name:name,price:price}]
+// Push events to GTM
+function trackEvent(eventName, name, price){
+dataLayer.push({
+event: eventName,
+item_name: name,
+value: price,
+currency: 'INR'
 });
 }
 
-function addToCart(id, name, price) {
-gtag('event','add_to_cart',{
-currency:'INR',
-value:price,
-items:[{item_id:id,item_name:name,price:price}]
-});
-}
-
-function processPayment(event){
-event.preventDefault();
+function processPayment(e){
+e.preventDefault();
 
 let card=document.getElementById("cardNumber").value;
 let result=document.getElementById("paymentResult");
@@ -159,17 +157,15 @@ if(card==="1111 1111 1111 1111"){
 result.innerHTML="✅ Payment Successful!";
 result.style.color="green";
 
-gtag('event','purchase',{
+dataLayer.push({
+event:'purchase',
 transaction_id:'RH'+Math.floor(Math.random()*100000),
 value:45000,
 currency:'INR'
 });
 
-}else if(card==="2222 2222 2222 2222"){
-result.innerHTML="❌ Payment Failed!";
-result.style.color="red";
 }else{
-result.innerHTML="❌ Invalid Card!";
+result.innerHTML="❌ Payment Failed!";
 result.style.color="red";
 }
 }
