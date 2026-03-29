@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <title>ResellHub Demo - Refurbished Phones</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="ResellHub demo website to track user actions like product views, add to cart, and purchases.">
+
+    <!-- Google Analytics -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-XXXXXXX'); // replace with your GA ID
+    </script>
+
+</head>
+
+<body style="font-family: Arial; text-align:center;">
+
+    <h1>ResellHub Demo Website</h1>
+    <p>Track user actions on refurbished smartphone store</p>
+
+    <hr>
+
+    <h2>Product Actions</h2>
+
+    <button onclick="gtag('event','view_item',{
+item_name:'iPhone 13',
+price:45000
+});">
+        View iPhone 13 </button>
+
+    <br><br>
+
+    <button onclick="gtag('event','add_to_cart',{
+item_name:'iPhone 13',
+price:45000
+});">
+        Add iPhone 13 to Cart </button>
+
+    <br><br>
+
+    <button onclick="gtag('event','purchase',{
+transaction_id:'RH123',
+value:45000,
+currency:'INR'
+});">
+        Buy iPhone 13 </button>
+
+    <hr>
+
+    <h2>User Actions</h2>
+
+    <button onclick="gtag('event','signup_click');">
+        Sign Up
+    </button>
+
+    <br><br>
+
+    <button onclick="gtag('event','contact_click');">
+        Contact Us
+    </button>
+
+    <hr>
+
+    <a href="https://www.flipkart.com" onclick="gtag('event','external_link_click');">
+        Compare Prices on Flipkart </a>
+
+</body>
+
+</html>
