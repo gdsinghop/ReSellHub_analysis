@@ -1,193 +1,180 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <title>ResellHub - Refurbished Smartphones India</title>
-    <meta name="description"
-        content="Buy refurbished smartphones at ResellHub. Affordable iPhones, Samsung & OnePlus devices with warranty in India.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>ResellHub - Refurbished Smartphones India</title>
+<meta name="description" content="Buy refurbished smartphones at ResellHub. Affordable iPhones, Samsung & OnePlus devices with warranty in India.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Google Analytics -->
+<!-- Google Analytics -->
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YC8MGL21LM"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YC8MGL21LM"></script>
 
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-YC8MGL21LM');
-    </script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-YC8MGL21LM');
+</script>
 
-    <!-- Microsoft Clarity -->
+<!-- Microsoft Clarity -->
 
-    <script>
-        (function (c, l, a, r, i, t, y) {
-            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-        })(window, document, "clarity", "script", "vu5ofhfn9i");
-    </script>
+<script>
+(function(c,l,a,r,i,t,y){
+c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "w3k2ozcbnk");
+</script>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial;
-            background: #f4f4f4;
-        }
+<style>
+body { margin:0; font-family:Arial; background:#f4f4f4; }
+header { background:#111; color:white; padding:20px; text-align:center; }
 
-        header {
-            background: #111;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+.products {
+display:flex;
+gap:20px;
+justify-content:center;
+padding:40px;
+flex-wrap:wrap;
+}
 
-        .products {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            padding: 40px;
-            flex-wrap: wrap;
-        }
+.product {
+background:white;
+padding:20px;
+width:250px;
+text-align:center;
+box-shadow:0 4px 8px rgba(0,0,0,0.1);
+}
 
-        .product {
-            background: white;
-            padding: 20px;
-            width: 250px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+button {
+background:#111;
+color:white;
+padding:10px;
+border:none;
+cursor:pointer;
+margin-top:10px;
+}
 
-        button {
-            background: #111;
-            color: white;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            margin-top: 10px;
-        }
+.payment-box{
+background:white;
+width:350px;
+margin:40px auto;
+padding:20px;
+box-shadow:0 4px 8px rgba(0,0,0,0.1);
+}
 
-        .payment-box {
-            background: white;
-            width: 350px;
-            margin: 40px auto;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        input {
-            width: 100%;
-            padding: 8px;
-            margin: 5px 0 15px 0;
-        }
-    </style>
+input{
+width:100%;
+padding:8px;
+margin:5px 0 15px 0;
+}
+</style>
 
 </head>
 
 <body>
 
-    <header>
-        <h1>ResellHub</h1>
-        <p>Refurbished Smartphones at Best Prices</p>
-    </header>
+<header>
+<h1>ResellHub</h1>
+<p>Refurbished Smartphones at Best Prices</p>
+</header>
 
-    <section class="products">
+<section class="products">
 
-        <div class="product">
-            <h3 onclick="viewItem('SKU_201','Refurbished iPhone 13',45000)">iPhone 13 (Refurbished)</h3>
-            <p>₹45,000</p>
-            <button onclick="addToCart('SKU_201','Refurbished iPhone 13',45000)">Add to Cart</button>
-        </div>
+<div class="product">
+<h3 onclick="viewItem('SKU_201','Refurbished iPhone 13',45000)">iPhone 13 (Refurbished)</h3>
+<p>₹45,000</p>
+<button onclick="addToCart('SKU_201','Refurbished iPhone 13',45000)">Add to Cart</button>
+</div>
 
-        <div class="product">
-            <h3 onclick="viewItem('SKU_202','Samsung Galaxy S21 Used',32000)">Samsung Galaxy S21</h3>
-            <p>₹32,000</p>
-            <button onclick="addToCart('SKU_202','Samsung Galaxy S21 Used',32000)">Add to Cart</button>
-        </div>
+<div class="product">
+<h3 onclick="viewItem('SKU_202','Samsung Galaxy S21 Used',32000)">Samsung Galaxy S21</h3>
+<p>₹32,000</p>
+<button onclick="addToCart('SKU_202','Samsung Galaxy S21 Used',32000)">Add to Cart</button>
+</div>
 
-        <div class="product">
-            <h3 onclick="viewItem('SKU_203','OnePlus 9 Refurbished',28000)">OnePlus 9</h3>
-            <p>₹28,000</p>
-            <button onclick="addToCart('SKU_203','OnePlus 9 Refurbished',28000)">Add to Cart</button>
-        </div>
+<div class="product">
+<h3 onclick="viewItem('SKU_203','OnePlus 9 Refurbished',28000)">OnePlus 9</h3>
+<p>₹28,000</p>
+<button onclick="addToCart('SKU_203','OnePlus 9 Refurbished',28000)">Add to Cart</button>
+</div>
 
-    </section>
+</section>
 
-    <div class="payment-box">
+<div class="payment-box">
 
-        <h2>Demo Payment</h2>
+<h2>Demo Payment</h2>
 
-        <form onsubmit="processPayment(event)">
+<form onsubmit="processPayment(event)">
 
-            <label>Card Number</label> <input type="text" id="cardNumber" placeholder="Enter Card Number" required>
+<label>Card Number</label> <input type="text" id="cardNumber" placeholder="Enter Card Number" required>
 
-            <label>Name</label> <input type="text" required>
+<label>Name</label> <input type="text" required>
 
-            <label>Expiry</label> <input type="text" placeholder="MM/YY" required>
+<label>Expiry</label> <input type="text" placeholder="MM/YY" required>
 
-            <label>CVV</label> <input type="password" required>
+<label>CVV</label> <input type="password" required>
 
-            <button type="submit">Pay Now</button>
+<button type="submit">Pay Now</button>
 
-        </form>
+</form>
 
-        <p id="paymentResult"></p>
+<p id="paymentResult"></p>
 
-        <p style="font-size:12px">
-            Test Cards:<br>
-            1111 1111 1111 1111 → Success<br>
-            2222 2222 2222 2222 → Failed
-        </p>
+<p style="font-size:12px">
+Test Cards:<br>
+1111 1111 1111 1111 → Success<br>
+2222 2222 2222 2222 → Failed
+</p>
 
-    </div>
+</div>
 
-    <script>
+<script>
 
-        function viewItem(id, name, price) {
-            gtag('event', 'view_item', {
-                currency: 'INR',
-                value: price,
-                items: [{ item_id: id, item_name: name, price: price }]
-            });
-        }
+function viewItem(id, name, price) {
+gtag('event','view_item',{
+currency:'INR',
+value:price,
+items:[{item_id:id,item_name:name,price:price}]
+});
+}
 
-        function addToCart(id, name, price) {
-            gtag('event', 'add_to_cart', {
-                currency: 'INR',
-                value: price,
-                items: [{ item_id: id, item_name: name, price: price }]
-            });
-        }
+function addToCart(id, name, price) {
+gtag('event','add_to_cart',{
+currency:'INR',
+value:price,
+items:[{item_id:id,item_name:name,price:price}]
+});
+}
 
-        function processPayment(event) {
-            event.preventDefault();
+function processPayment(event){
+event.preventDefault();
 
-            let card = document.getElementById("cardNumber").value;
-            let result = document.getElementById("paymentResult");
+let card=document.getElementById("cardNumber").value;
+let result=document.getElementById("paymentResult");
 
-            if (card === "1111 1111 1111 1111") {
-                result.innerHTML = "✅ Payment Successful!";
-                result.style.color = "green";
+if(card==="1111 1111 1111 1111"){
+result.innerHTML="✅ Payment Successful!";
+result.style.color="green";
 
-                gtag('event', 'purchase', {
-                    transaction_id: 'RH' + Math.floor(Math.random() * 100000),
-                    value: 45000,
-                    currency: 'INR'
-                });
+gtag('event','purchase',{
+transaction_id:'RH'+Math.floor(Math.random()*100000),
+value:45000,
+currency:'INR'
+});
 
-            } else if (card === "2222 2222 2222 2222") {
-                result.innerHTML = "❌ Payment Failed!";
-                result.style.color = "red";
-            } else {
-                result.innerHTML = "❌ Invalid Card!";
-                result.style.color = "red";
-            }
-        }
+}else if(card==="2222 2222 2222 2222"){
+result.innerHTML="❌ Payment Failed!";
+result.style.color="red";
+}else{
+result.innerHTML="❌ Invalid Card!";
+result.style.color="red";
+}
+}
 
-    </script>
+</script>
 
 </body>
-
 </html>
